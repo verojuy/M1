@@ -8,11 +8,19 @@ function BinarioADecimal(num) {
 
   }
   return sum;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f3b20d2739af4b095ed499299c15a8e6c1a0385
 
 }
 
 function DecimalABinario(num) {
   // tu codigo aca
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 1f3b20d2739af4b095ed499299c15a8e6c1a0385
   let str =  "";
   while( num>0){
     let resto = num%2;
@@ -26,6 +34,11 @@ function DecimalABinario(num) {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1f3b20d2739af4b095ed499299c15a8e6c1a0385
 module.exports = {
   BinarioADecimal,
   DecimalABinario,
