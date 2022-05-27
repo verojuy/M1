@@ -62,6 +62,16 @@ function cacheFunction(cb) {
   (tip: si usaste un objeto, podés usar hasOwnProperty) 
 
   */
+ var cache = {};
+ return function(arg){
+   if(cache.hasOwnProperty(arg)){
+     return cache[arg];
+   }
+   var result =cb (arg);
+   cache[arg] = result;
+   return result;
+ }
+
 }
 
 // Bind
@@ -91,8 +101,9 @@ function getNombre() {
   nombre del instructor y del alumno, respectivamente.
 */
 
-let getNombreInstructor;
-let getNombreAlumno;
+let getNombreInstructor = getNombre.bind(instructor)// hace una copia de la funcion y devuelde una nueva
+let getNombreAlumno = getNombre.bind(alumno)// el parametro es a donde quiero que se re direccione el this
+
 
 /*
   Ejercicio 4
@@ -109,9 +120,9 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
   return delimitadorIzquierda + cadena + delimitadorDerecha;
 }
 
-let textoAsteriscos;
-let textoGuiones;
-let textoUnderscore;
+let textoAsteriscos=crearCadena.bind (this,"*","*");//el bind se utiliza para dejraa fijos los paremetros que quiero conservar
+let textoGuiones=crearCadena.bind(this,"-","-");
+let textoUnderscore=crearCadena.bind (this,"_","_");
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
